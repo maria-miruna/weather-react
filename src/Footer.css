@@ -1,0 +1,9 @@
+.Footer .footer {
+  font-family: "PT Mono", monospace;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.Footer .link {
+  color: palevioletred;
+}

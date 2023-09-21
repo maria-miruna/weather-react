@@ -1,0 +1,36 @@
+.Search button {
+  border: none;
+  padding: 0;
+}
+
+.Search form {
+  width: 100%;
+}
+
+.Search .search-input,
+.search-bar,
+.search-element,
+.location-element {
+  background-color: #fff6f6;
+  border-radius: 25px;
+}
+
+.Search .search-input {
+  border: none;
+  flex-grow: 1;
+  outline: none;
+}
+.Search .search-bar {
+  margin: 2vh 10vw;
+  border: 1px solid #787878;
+  display: flex;
+  padding: 10px;
+}
+.Search .search-element {
+  color: #787878;
+  margin-left: 5px;
+}
+
+.Search .location-element {
+  color: #787878;
+}
