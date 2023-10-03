@@ -1,17 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./Temperature.css";
 
-export default function Temperature() {
+export default function Temperature(props) {
+  const [currentDate, setCurrentDate] = useState(new Date());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentDate(new Date());
+    }, 60000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  
+  const dayOfWeek = currentDate.toLocaleDateString(undefined, {
+    weekday: "long",
+  });
+  const month = currentDate.toLocaleDateString(undefined, {
+    month: "long",
+  });
+  const dayOfMonth = currentDate.getUTCDate();
+
   return (
     <div className="Temperature">
+      <div className="row">
+        <div className="col-md-5 col-sm-12 text-center">
+          <h1>{props.result.name}</h1>
+          <p className="days">
+            {dayOfWeek} 12:15, {dayOfMonth} {month}
+          </p>
+        </div>
+      </div>
+
       <div className="row align-items-center mt-2">
         <div className="col-md-5 col-sm-12">
           <div className="d-flex flex-row justify-content-center align-items-center">
-            <img className="icon" src="" alt="" />
+            <img
+              className="icon"
+              src={`https://openweathermap.org/img/wn/${props.result.icon}.png`}
+              alt={props.result.description}
+            />
             <div className="d-flex flex-column">
               <div className="current-information">
-                <span className="temperature"> 17</span>°
+                <span className="temperature"> {props.result.temperature}</span>
+                °
                 <span>
                   <a href="/" className="current-selected">
                     C
@@ -19,7 +52,9 @@ export default function Temperature() {
                   /<a href="/">F</a>
                 </span>
               </div>
-              <div className="weather-information">Partly cloudly</div>
+              <div className="weather-information">
+                {props.result.description}
+              </div>
             </div>
           </div>
         </div>
@@ -31,7 +66,7 @@ export default function Temperature() {
             </div>
             <div className="col-4">
               <p>Wind</p>
-              <p>11km/h</p>
+              <p>{props.result.windSpeed} km/h</p>
             </div>
             <div className="col-4">
               <p>Sunrise</p>
@@ -43,7 +78,7 @@ export default function Temperature() {
             </div>
             <div className="col-4">
               <p>Humidity</p>
-              <p>60%</p>
+              <p>{props.result.humidity}%</p>
             </div>
             <div className="col-4">
               <p>Sunset</p>
