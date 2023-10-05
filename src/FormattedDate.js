@@ -19,6 +19,9 @@ export default function FormattedDate(props) {
   });
   let day = props.date.getDate();
 
-  return `${dayOfWeek} ${hours}:${minutes}, ${day} ${month}
-    `;
+  return (
+    <div>
+      {dayOfWeek} {hours}:{minutes}, {day} {month}
+    </div>
+  );
 }
