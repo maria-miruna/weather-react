@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 import "./WeatherInfo.css";
 
@@ -25,14 +26,7 @@ export default function WeatherInfo(props) {
 
             <div className="d-flex flex-column">
               <div className="current-information">
-                <span className="temperature"> {props.result.temperature}</span>
-                °
-                <span>
-                  <a href="/" className="current-selected">
-                    C
-                  </a>
-                  /<a href="/">F</a>
-                </span>
+                <WeatherTemperature celsius={props.result.temperature} />
               </div>
               <div className="weather-information">
                 {props.result.description}
