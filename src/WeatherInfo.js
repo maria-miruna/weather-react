@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 import "./WeatherInfo.css";
 
@@ -18,11 +19,10 @@ export default function WeatherInfo(props) {
       <div className="row align-items-center mt-2">
         <div className="col-md-5 col-sm-12">
           <div className="d-flex flex-row justify-content-center align-items-center">
-            <img
-              className="icon"
-              src={`https://openweathermap.org/img/wn/${props.result.icon}.png`}
-              alt={props.result.description}
-            />
+            <div className="icon">
+              <WeatherIcon code={props.result.icon} />
+            </div>
+
             <div className="d-flex flex-column">
               <div className="current-information">
                 <span className="temperature"> {props.result.temperature}</span>

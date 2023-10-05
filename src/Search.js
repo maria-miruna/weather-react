@@ -4,6 +4,7 @@ import axios from "axios";
 import "./Search.css";
 import WeatherInfo from "./WeatherInfo";
 
+
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [result, setResult] = useState({ ready: false });

@@ -19,8 +19,7 @@
 }
 
 .WeatherInfo .icon {
-  width: 100px;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .WeatherInfo .highlight-cell {
