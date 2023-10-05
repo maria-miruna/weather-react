@@ -1,11 +1,11 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 
-import "./Temperature.css";
+import "./WeatherInfo.css";
 
-export default function Temperature(props) {
+export default function WeatherInfo(props) {
   return (
-    <div className="Temperature">
+    <div className="WeatherInfo">
       <div className="row">
         <div className="col-md-5 col-sm-12 text-center">
           <h1>{props.result.city}</h1>

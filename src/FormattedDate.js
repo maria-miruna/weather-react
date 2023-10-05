@@ -17,11 +17,8 @@ export default function FormattedDate(props) {
   let month = props.date.toLocaleDateString(undefined, {
     month: "long",
   });
-  let day = props.date.getUTCDate();
+  let day = props.date.getDate();
 
-  return (
-    <div>
-      {dayOfWeek} {hours}:{minutes}, {day} {month}
-    </div>
-  );
+  return `${dayOfWeek} ${hours}:${minutes}, ${day} ${month}
+    `;
 }

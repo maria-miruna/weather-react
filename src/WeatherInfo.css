@@ -1,29 +1,29 @@
-.Temperature .row {
+.WeatherInfo .row {
   row-gap: 20px;
 }
 
-.Temperature .current-selected,
-.temperature {
+.WeatherInfo .current-selected,
+.WeatherInfo {
   font-weight: 500;
 }
 
-.Temperature .current-information {
+.WeatherInfo .current-information {
   font-family: "Roboto", sans-serif;
   font-size: 42px;
   font-weight: 300;
 }
 
-.Temperature .weather-information::first-letter {
+.WeatherInfo .weather-information::first-letter {
   font-size: 15px;
   text-transform: capitalize;
 }
 
-.Temperature .icon {
+.WeatherInfo .icon {
   width: 100px;
   margin-right: 10px;
 }
 
-.Temperature .highlight-cell {
+.WeatherInfo .highlight-cell {
   border: 1px solid #9071ff25;
   border-radius: 8px;
   color: #1b1b1bb3;

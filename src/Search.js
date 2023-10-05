@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "./Search.css";
-import Temperature from "./Temperature";
+import WeatherInfo from "./WeatherInfo";
 
-export default function Search() {
-  // const [city, setCity] = useState("");
+export default function Search(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [result, setResult] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data);
     setResult({
       ready: true,
       temperature: Math.round(response.data.main.temp),
@@ -22,12 +21,20 @@ export default function Search() {
     });
   }
 
-  function handleSearch(event) {
-    event.preventDefault();
+  function search() {
+    let apiKey = "2ad97b46f52d1ea9b55ab2f9586e1ccf";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    axios.get(url).then(handleResponse);
   }
 
-  function showWeather(event) {
-    // setCity(event.target.value);
+  function handleSearch(event) {
+    event.preventDefault();
+    search(city);
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
   }
 
   if (result.ready) {
@@ -41,7 +48,7 @@ export default function Search() {
                 className="search-input w-100"
                 type="text"
                 placeholder="Search a city"
-                onChange={showWeather}
+                onChange={handleCityChange}
               />
             </form>
             <button className="location-element">
@@ -52,16 +59,11 @@ export default function Search() {
             </button>
           </div>
         </div>
-        <Temperature result={result} />
+        <WeatherInfo result={result} />
       </div>
     );
   } else {
-    let city = "Oslo";
-    let apiKey = "2ad97b46f52d1ea9b55ab2f9586e1ccf";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-    axios.get(url).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 }
