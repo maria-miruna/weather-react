@@ -1,34 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import FormattedDate from "./FormattedDate";
 
 import "./Temperature.css";
 
 export default function Temperature(props) {
-  const [currentDate, setCurrentDate] = useState(new Date());
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentDate(new Date());
-    }, 60000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  
-  const dayOfWeek = currentDate.toLocaleDateString(undefined, {
-    weekday: "long",
-  });
-  const month = currentDate.toLocaleDateString(undefined, {
-    month: "long",
-  });
-  const dayOfMonth = currentDate.getUTCDate();
-
   return (
     <div className="Temperature">
       <div className="row">
         <div className="col-md-5 col-sm-12 text-center">
-          <h1>{props.result.name}</h1>
+          <h1>{props.result.city}</h1>
           <p className="days">
-            {dayOfWeek} 12:15, {dayOfMonth} {month}
+            <FormattedDate date={props.result.date} />
           </p>
         </div>
       </div>
