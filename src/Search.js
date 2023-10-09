@@ -7,6 +7,7 @@ import WeatherInfo from "./WeatherInfo";
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [result, setResult] = useState({ ready: false });
+  const [clear, setClear] = useState("");
 
   function handleResponse(response) {
     setResult({
@@ -40,6 +41,11 @@ export default function Search(props) {
 
   function handleCityChange(event) {
     setCity(event.target.value);
+    setClear(event.target.value);
+  }
+
+  function deleteContent() {
+    setClear("");
   }
 
   if (result.ready) {
@@ -53,13 +59,14 @@ export default function Search(props) {
                 className="search-input w-100"
                 type="text"
                 placeholder="Search a city"
+                value={clear}
                 onChange={handleCityChange}
               />
             </form>
             <button className="location-element">
               <i className="fa-sharp fa-solid fa-location-dot"></i>
             </button>
-            <button className="search-element">
+            <button className="search-element" onClick={deleteContent}>
               <i className="fa-solid fa-xmark p-1"></i>
             </button>
           </div>
