@@ -4,6 +4,8 @@ import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 import Sunrise from "./Sunrise";
 import Sunset from "./Sunset";
+import MaxTemperature from "./MaxTemperature";
+import MinTemperature from "./MinTemperature";
 
 import "./WeatherInfo.css";
 
@@ -14,7 +16,10 @@ export default function WeatherInfo(props) {
         <div className="col-md-5 col-sm-12 text-center">
           <h1>{props.result.city}</h1>
           <p className="days">
-            <FormattedDate date={props.result.date} />
+            <FormattedDate
+              date={props.result.date}
+              timezone={props.result.timezone}
+            />
           </p>
         </div>
       </div>
@@ -40,7 +45,10 @@ export default function WeatherInfo(props) {
           <div className="row py-3 grid text-center highlight-cell">
             <div className="col-4">
               <p>Max</p>
-              <p>22°</p>
+              <MaxTemperature
+                lon={props.result.longitude}
+                lat={props.result.latitude}
+              />
             </div>
             <div className="col-4">
               <p>Wind</p>
@@ -55,7 +63,10 @@ export default function WeatherInfo(props) {
             </div>
             <div className="col-4">
               <p>Min</p>
-              <p>14°</p>
+              <MinTemperature
+                lon={props.result.longitude}
+                lat={props.result.latitude}
+              />
             </div>
             <div className="col-4">
               <p>Humidity</p>

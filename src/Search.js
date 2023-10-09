@@ -21,6 +21,8 @@ export default function Search(props) {
       sunrise: response.data.sys.sunrise,
       sunset: response.data.sys.sunset,
       timezone: response.data.timezone,
+      longitude: response.data.coord.lon,
+      latitude: response.data.coord.lat,
     });
   }
 
