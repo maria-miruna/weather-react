@@ -17,7 +17,7 @@ export default function MaxTemperature(props) {
     }
 
     search();
-  });
+  }, [props.lat, props.lon]);
 
   return <p>{maximumTemperature}°C</p>;
 }

@@ -17,7 +17,7 @@ export default function MinTemperature(props) {
     }
 
     search();
-  });
+  }, [props.lat, props.lon]);
 
   return <p>{minimumTemperature}°C</p>;
 }
