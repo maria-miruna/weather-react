@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Search.css";
 import WeatherInfo from "./WeatherInfo";
 
-
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [result, setResult] = useState({ ready: false });
@@ -19,6 +18,9 @@ export default function Search(props) {
       icon: response.data.weather[0].icon,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
+      sunrise: response.data.sys.sunrise,
+      sunset: response.data.sys.sunset,
+      timezone: response.data.timezone,
     });
   }
 

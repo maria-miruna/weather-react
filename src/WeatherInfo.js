@@ -2,6 +2,8 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import Sunrise from "./Sunrise";
+import Sunset from "./Sunset";
 
 import "./WeatherInfo.css";
 
@@ -46,7 +48,10 @@ export default function WeatherInfo(props) {
             </div>
             <div className="col-4">
               <p>Sunrise</p>
-              <p>07:19</p>
+              <Sunrise
+                sunrise={props.result.sunrise}
+                timezone={props.result.timezone}
+              />
             </div>
             <div className="col-4">
               <p>Min</p>
@@ -58,7 +63,10 @@ export default function WeatherInfo(props) {
             </div>
             <div className="col-4">
               <p>Sunset</p>
-              <p>19:55</p>
+              <Sunset
+                sunset={props.result.sunset}
+                timezone={props.result.timezone}
+              />
             </div>
           </div>
         </div>
