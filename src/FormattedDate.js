@@ -23,8 +23,8 @@ export default function FormattedDate(props) {
   let day = localDate.getDate();
 
   return (
-    <div>
+    <p>
       {dayOfWeek} {hours}:{minutes}, {day} {month}
-    </div>
+    </p>
   );
 }
