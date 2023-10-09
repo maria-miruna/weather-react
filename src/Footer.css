@@ -1,3 +1,7 @@
+.Footer p {
+  font-size: 14px;
+}
+
 .Footer .footer {
   font-family: "PT Mono", monospace;
   max-width: 980px;
