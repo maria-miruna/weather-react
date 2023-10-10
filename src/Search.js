@@ -3,6 +3,7 @@ import axios from "axios";
 
 import "./Search.css";
 import WeatherInfo from "./WeatherInfo";
+import Forecast from "./Forecast";
 
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -72,6 +73,7 @@ export default function Search(props) {
           </div>
         </div>
         <WeatherInfo result={result} />
+        <Forecast lon={result.longitude} lat={result.latitude} />
       </div>
     );
   } else {

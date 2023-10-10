@@ -33,17 +33,6 @@ a {
   text-transform: capitalize;
 }
 
-.weather-item {
-  border: 1px solid #9071ff25;
-  border-radius: 8px;
-  background-color: #9071ff0f;
-  min-width: 110px;
-  padding: 1em 0;
-}
-
-.week-days {
-  text-transform: capitalize;
-}
 
 @media screen and (min-width: 768px) {
   .container {

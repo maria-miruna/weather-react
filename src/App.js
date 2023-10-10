@@ -1,6 +1,4 @@
 import Search from "./Search";
-// import Temperature from "./Temperature";
-import Forecast from "./Forecast";
 import Footer from "./Footer";
 
 import "./App.css";
@@ -11,8 +9,6 @@ export default function App() {
       <div className="container">
         <Search defaultCity="Oradea" />
 
-        {/* <Temperature result={result} /> */}
-        <Forecast />
         <Footer />
       </div>
     </div>
