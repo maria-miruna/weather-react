@@ -2,7 +2,7 @@
   row-gap: 20px;
 }
 
-.WeatherInfo .current-selected,
+.WeatherInfo .current-temperature,
 .WeatherInfo {
   font-weight: 500;
 }

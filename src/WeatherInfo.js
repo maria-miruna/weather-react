@@ -1,7 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
-import WeatherTemperature from "./WeatherTemperature";
 import Sunrise from "./Sunrise";
 import Sunset from "./Sunset";
 import MaxTemperature from "./MaxTemperature";
@@ -33,7 +32,9 @@ export default function WeatherInfo(props) {
 
             <div className="d-flex flex-column">
               <div className="current-information">
-                <WeatherTemperature celsius={props.result.temperature} />
+                <span className="current-temperature">
+                  <span>{props.result.temperature}°C</span>
+                </span>
               </div>
               <div className="weather-information">
                 {props.result.description}
