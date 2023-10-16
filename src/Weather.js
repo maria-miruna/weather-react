@@ -32,7 +32,14 @@ export default function Weather(props) {
     let apiKey = "2ad97b46f52d1ea9b55ab2f9586e1ccf";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-    axios.get(url).then(handleResponse);
+    axios
+      .get(url)
+      .then(handleResponse)
+      .catch((error) => {
+        if (error.response && error.response.status === 404) {
+          window.alert("City not found. Please enter a valid city.");
+        }
+      });
   }
 
   function handleSearch(event) {

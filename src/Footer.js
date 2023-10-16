@@ -24,7 +24,6 @@ export default function Footer() {
         >
           hosted on Netlify
         </a>
-        .
       </p>
     </div>
   );
