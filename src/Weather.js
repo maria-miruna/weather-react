@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-
-import "./Search.css";
 import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
 
-export default function Search(props) {
+import "./Weather.css";
+
+export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [result, setResult] = useState({ ready: false });
   const [clear, setClear] = useState("");
@@ -52,7 +52,7 @@ export default function Search(props) {
   if (result.ready) {
     return (
       <div>
-        <div className="Search">
+        <div className="Weather">
           <div className="search-bar">
             <i className="fas fa-search p-1 search-element"></i>
             <form onSubmit={handleSearch}>
@@ -64,9 +64,6 @@ export default function Search(props) {
                 onChange={handleCityChange}
               />
             </form>
-            <button className="location-element">
-              <i className="fa-sharp fa-solid fa-location-dot"></i>
-            </button>
             <button className="search-element" onClick={deleteContent}>
               <i className="fa-solid fa-xmark p-1"></i>
             </button>

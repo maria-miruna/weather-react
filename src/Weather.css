@@ -1,36 +1,31 @@
-.Search button {
+.Weather button {
   border: none;
   padding: 0;
 }
 
-.Search form {
+.Weather form {
   width: 100%;
 }
 
-.Search .search-input,
+.Weather .search-input,
 .search-bar,
-.search-element,
-.location-element {
+.search-element {
   background-color: #fff6f6;
   border-radius: 25px;
 }
 
-.Search .search-input {
+.Weather .search-input {
   border: none;
   flex-grow: 1;
   outline: none;
 }
-.Search .search-bar {
+.Weather .search-bar {
   margin: 2vh 10vw;
   border: 1px solid #787878;
   display: flex;
   padding: 10px;
 }
-.Search .search-element {
+.Weather .search-element {
   color: #787878;
   margin-left: 5px;
-}
-
-.Search .location-element {
-  color: #787878;
 }

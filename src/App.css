@@ -24,6 +24,7 @@ a {
   font-family: "PT Mono", monospace;
   max-width: 980px;
   margin: 0 auto;
+  margin-bottom: 10px;
   padding: 0 20px 20px 20px;
 }
 
@@ -33,7 +34,6 @@ a {
   text-transform: capitalize;
 }
 
-
 @media screen and (min-width: 768px) {
   .container {
     border: 1px solid rgba(8, 0, 0, 0.3);
@@ -42,6 +42,6 @@ a {
   }
 
   body {
-    padding-top: 90px;
+    padding-top: 50px;
   }
 }
